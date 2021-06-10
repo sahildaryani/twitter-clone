@@ -14,13 +14,16 @@
     display: flex;
 }
 
-.tweetBox_input > input {
-    flex: 1;
-    margin-left: 20px;
+.tweetBox_input > input{
+    flex:1;
+    margin-left:20px;
     font-size: 20px;
-    border: none;
-}
+    border:none;
+    outline: none;
+    background: transparent;
+  }
 
+  
 .tweetBox_tweetButton {
     background-color: var(--twitter-color) !important;
     border: none !important;

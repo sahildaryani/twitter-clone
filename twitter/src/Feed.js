@@ -3,6 +3,7 @@ import "./Feed.css";
 import TweetBox from "./TweetBox";
 import Post from "./Post";
 import db from "./firebase";
+import FlipMove from "react-flip-move";
 
 function Feed(){
     const [posts, setPosts] = useState ([]);
@@ -21,8 +22,11 @@ function Feed(){
             </div>
 
             <TweetBox />
+
+            <FlipMove>
+            {/* Posts */}
             {posts.map (post => (
-            <Post displayName={post.displayName} username={post.username} verified={post.verified} text={post.text} avatar={post.avatar} image={post.image} />    
+            <Post key = {post.text} displayName={post.displayName} username={post.username} verified={post.verified} text={post.text} avatar={post.avatar} image={post.image} />    
             ))}
             
             {/*
@@ -33,6 +37,7 @@ function Feed(){
             <Post displayName="Goku" username="mr.exemplary" verified={true} text="Just warmin' up!" avatar="https://cdn.dribbble.com/users/81809/screenshots/3443452/ssg-goku.jpg" image="https://media1.tenor.com/images/b13da3906d4f03e0f1ce818238d188a4/tenor.gif?itemid=14110488" />
             <Post displayName="Goku" username="mr.exemplary" verified={true} text="Just warmin' up!" avatar="https://cdn.dribbble.com/users/81809/screenshots/3443452/ssg-goku.jpg" image="https://media1.tenor.com/images/b13da3906d4f03e0f1ce818238d188a4/tenor.gif?itemid=14110488" />
              <Post displayName="Goku" username="mr.exemplary" verified={true} text="Just warmin' up!" avatar="https://cdn.dribbble.com/users/81809/screenshots/3443452/ssg-goku.jpg" image="https://media1.tenor.com/images/b13da3906d4f03e0f1ce818238d188a4/tenor.gif?itemid=14110488" />  */}
+             </FlipMove>
         </div>
     )
 }
